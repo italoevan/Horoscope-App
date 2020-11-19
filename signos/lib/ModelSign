@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+class Aries extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    double _largura = MediaQuery.of(context).size.width;
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF345D7E),
+        title: Text("Aries"),
+        centerTitle: true,
+      ),
+      body: Container(
+        child: Stack(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Image.asset("images/back.jpg", fit: BoxFit.cover),
+            ),
+            Container(
+
+              margin: EdgeInsets.all(_largura /20),
+
+              child:Column(
+
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Image.asset("images/medio_aries.png",height: _largura /2,),
+                  Text("Aries ♈",textAlign: TextAlign.center,style: TextStyle(fontSize:50, color:Colors.white),),
+
+                  //body
+                  Expanded(child:Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(32),
+                        color: Color(0xff5C00ff00)
+
+                    ),
+                    child:SingleChildScrollView(child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text("• Positive Aries Personality Traits",style:TextStyle(fontSize: 26,color:Colors.red,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                        Padding(padding:EdgeInsets.only(top:12)),
+                        Text("  In astrology, each zodiac sign is assigned one of three modalities: cardinal, fixed, or mutable. A sign's modality helps us understand how people best express themselves. The Aries modality is cardinal. People born with a cardinal modality are known for being traditional, reasonable, and natural-born leaders.",
+                          style: TextStyle(fontSize: 22,color:Colors.white,fontWeight: FontWeight.bold),textAlign: TextAlign.justify,
+                        ),
+                        Text("  Beyond their incredible leadership skills, Rams have a number of great characteristics. Here are the most important Aries traits to know.",
+                          style: TextStyle(fontSize: 22,color:Colors.white,fontWeight: FontWeight.bold),textAlign: TextAlign.justify,
+                        )
+                      ],
+                    )
+                    )
+
+                    ,
+                  )
+                  )
+
+                ],
+
+
+              ),
+
+            )
+
+          ],
+        ),
+      ),
+    );
+  }
+}
